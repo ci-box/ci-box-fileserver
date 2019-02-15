@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  lava-server:
+    container_name: fileserver
+    hostname: fileserver
+    build:
+      context: ./
+      args:
+        http_port: 80
+        ftp_port: 21
+        root: "/wwwroot"
+        extra_packages: ""
+    restart: always
+    ports:
+      - "5554:80"    # http
+      - "5555:21"    # ftp
+    volumes:
+      - ./data:/wwwroot
