@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  lava-server:
+  fileserver:
     container_name: fileserver
     hostname: fileserver
     build:
