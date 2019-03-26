@@ -13,7 +13,7 @@ services:
         extra_packages: ""
     restart: always
     ports:
-      - "5554:80"    # http
-      - "5555:21"    # ftp
+      - "8888:80"    # http
+      - "2121:21"    # ftp
     volumes:
       - ./data:/wwwroot
