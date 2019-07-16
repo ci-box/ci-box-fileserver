@@ -18,7 +18,7 @@ no_anon_password=YES
 anon_upload_enable=YES
 anon_mkdir_write_enable=YES
 anon_other_write_enable=YES
-anon_world_readable_only=YES
+anon_world_readable_only=NO
 anon_upload_enable=YES
 file_open_mode=0777
 write_enable=YES
@@ -30,6 +30,10 @@ ssl_enable=NO
 mkdir /var/run/vsftpd
 mkdir /var/run/vsftpd/empty
 touch ${ROOT}/empty.txt
+
+chown root:nogroup -R ${ROOT}
+chmod -R a+rw ${ROOT}/
+chmod a-w ${ROOT}
 
 lighttpd -f /etc/lighttpd.conf &
 vsftpd /etc/vsftpd.conf
